@@ -29,14 +29,15 @@ pipeline {
                     ansible jenkins-slaves -m shell -a "cat /home/jenkins'.ssh/authorized_keys" -i inventory
                 """
             } //steps
-    } //stage
-    stage("Deploy") {
-        steps {
-            sh """
-                # One method
-                zip "jenkins-slave-setup.zip" .
-                scp jenkins-slave-setup.zip root@webserver:/var/www/html/my-repository
-            """
+        } //stage
+        stage("Deploy") {
+            steps {
+                sh """
+                    # One method
+                    zip "jenkins-slave-setup.zip" .
+                    scp jenkins-slave-setup.zip root@webserver:/var/www/html/my-repository
+                """
+            }
         }
-    }
+    } //stages
 }
