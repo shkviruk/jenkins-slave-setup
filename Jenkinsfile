@@ -21,7 +21,7 @@ pipeline {
                 """
             } //steps
         } //stage
-        stage("Test") {}
+        stage("Test") {
             steps {
                 sh """
                     ansible jenkins-slaves -m shell -a "ls /home/jenkins_slave" -i inventory
