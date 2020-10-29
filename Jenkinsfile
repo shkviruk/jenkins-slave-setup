@@ -10,12 +10,8 @@ pipeline {
         stage("Set up") {
             steps {
                 sh """
-		    apt install iputils-ping
-		    ping 8.8.8.8
-		    ping 8.8.8.8
-		    ping 8.8.8.8
-		    ping 8.8.8.8
-		    ping 8.8.8.8
+		    apt install iputils-ping -y
+		    ping -c 4 8.8.8.8 
                     pip install ansible
                 """
             } //steps
