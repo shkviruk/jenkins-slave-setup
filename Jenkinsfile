@@ -10,6 +10,7 @@ pipeline {
         stage("Set up") {
             steps {
                 sh """
+		    apt-get install iputils
 		    ping 8.8.8.8
                     pip install ansible
                 """
