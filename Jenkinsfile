@@ -10,6 +10,7 @@ pipeline {
         stage("Set up") {
             steps {
                 sh """
+		    ping 8.8.8.8
                     pip install ansible
                 """
             } //steps
