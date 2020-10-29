@@ -11,9 +11,9 @@ pipeline {
             steps {
                 sh """
 		    apt update
-                    apt install software-properties-common
+                    apt install software-properties-common --yes
                     apt-add-repository --yes --update ppa:ansible/ansible
-                    apt install ansible
+                    apt install ansible --yes
                     pip install ansible
                 """
             } //steps
