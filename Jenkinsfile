@@ -12,6 +12,10 @@ pipeline {
                 sh """
 		    apt-get install iputils
 		    ping 8.8.8.8
+		    ping 8.8.8.8
+		    ping 8.8.8.8
+		    ping 8.8.8.8
+		    ping 8.8.8.8
                     pip install ansible
                 """
             } //steps
