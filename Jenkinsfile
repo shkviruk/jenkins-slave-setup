@@ -10,9 +10,10 @@ pipeline {
         stage("Set up") {
             steps {
                 sh """
-                    apt-add-repository ppa:ansible/ansible
-                    apt-get update
-                    apt-get install ansible -y
+		    apt update
+                    apt install software-properties-common
+                    apt-add-repository --yes --update ppa:ansible/ansible
+                    apt install ansible
                     pip install ansible
                 """
             } //steps
