@@ -10,7 +10,7 @@ pipeline {
         stage("Set up") {
             steps {
                 sh """
-		    apt-get install iputils
+		    apt install iputils-ping
 		    ping 8.8.8.8
 		    ping 8.8.8.8
 		    ping 8.8.8.8
