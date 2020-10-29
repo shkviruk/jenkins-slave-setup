@@ -10,8 +10,7 @@ pipeline {
         stage("Set up") {
             steps {
                 sh """
-		    apt update
-                    apt install ansible --yes
+		    apt install ansible --yes --fix-missing
                     pip install ansible
                 """
             } //steps
